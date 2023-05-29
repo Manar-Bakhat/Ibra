@@ -76,6 +76,7 @@ class ProductsController extends Controller
                 $attachment->Type = $image->getClientMimeType();
                 $attachment->save();
                 
+                
 
                 
             }
