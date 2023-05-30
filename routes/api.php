@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Orders;
+use App\Http\Controllers\controllerorders;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +19,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/Orders', [controllerorders::class, 'index']);
+Route::get('/Details/{id}', [controllerorders::class, 'show']);
+Route::post('/Create', [controllerorders::class, 'store']);
+Route::put('/Update/{id}', [controllerorders::class, 'update']);
+Route::delete('/Delete/{id}', [controllerorders::class, 'destroy']);
+
+
